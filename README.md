@@ -6,8 +6,8 @@ Data sources exists in directories of JSON logs and JSON metadata on Sparkify so
 Created a database schema to match Analytics teams data requirements making use of star schema modelling. 
 Fact table - songplays - log records data associated with songplays
     
-    |start_time|user_id|level|song_id|artist_id|session_id|location|user_agent|
-    |:---------|:------|:----|:------|:--------|:---------|:-------|:---------|
+  |songplay_id|start_time|user_id|level|song_id|artist_id|session_id|location|user_agent|
+  |:----------|:---------|:------|:----|:------|:--------|:---------|:-------|:---------|
     
 Dimension tables: 
  1. users - app users
