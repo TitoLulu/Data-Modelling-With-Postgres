@@ -10,6 +10,10 @@ def process_song_file(cur, filepath):
     - Opens files in filepath
     - Inserts song records into song_table
     - Inserts artist records into artist_table
+    Arguments:
+        cur :instance of connection to databasee
+        filepath : direction to where files are located
+    Returns: None
     """
     # open song file
     df = pd.read_json(filepath,lines=True)
@@ -29,6 +33,10 @@ def process_log_file(cur, filepath):
     - Creates and inserts time data records into time data dataframe
     - Inserts user records into user table
     - Inserts songplay records into songplay table
+    Arguments:
+        cur :instance of connection to database
+        filepath : direction to where files are located
+    Returns: None
     """
     # open log file
     df = pd.read_json(filepath,lines=True)
@@ -71,12 +79,18 @@ def process_log_file(cur, filepath):
         songplay_data = [pd.to_datetime(row.ts),row.userId,row.level,songid,artistid,row.sessionId,row.location,row.userAgent]
         cur.execute(songplay_table_insert, songplay_data)
 
-
+f
 def process_data(cur, conn, filepath, func):
     """
     - Retrieves files 
     - Gets number of files retrieved
     - Iterates over retrieved files and processes each file
+    Arguments:
+        cur :instance of connection to database
+        filepath : direction to where files are located
+        func :placeholder for function
+        conn : database connection
+    Returns: None
     """
     # get all files matching extension from directory
     all_files = []
