@@ -79,7 +79,6 @@ def process_log_file(cur, filepath):
         songplay_data = [pd.to_datetime(row.ts),row.userId,row.level,songid,artistid,row.sessionId,row.location,row.userAgent]
         cur.execute(songplay_table_insert, songplay_data)
 
-f
 def process_data(cur, conn, filepath, func):
     """
     - Retrieves files 

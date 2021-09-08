@@ -15,9 +15,9 @@ CREATE TABLE IF NOT EXISTS songplays
     start_time timestamp NOT NULL, 
     user_id int NOT NULL, 
     level varchar, 
-    song_id varchar NOT NULL, 
-    artist_id varchar NOT NULL, 
-    session_id int NOT NULL, 
+    song_id varchar, 
+    artist_id varchar, 
+    session_id int, 
     location varchar, 
     user_agent varchar);
 """)
@@ -135,7 +135,7 @@ song_select = ("""
         song_id, 
         songs.artist_id 
     from songs JOIN artists on songs.artist_id=artists.artist_id
-    where songs.title = % and artists.name =%;
+    where songs.title = %s and artists.name = %s and songs.duration =%s;
 """)
 
 # QUERY LISTS
